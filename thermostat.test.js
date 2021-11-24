@@ -34,4 +34,11 @@ describe('Thermostat', () => {
     expect(thermostat.getTemperature()).toBe(20);
   });
 
+  it('temp cannot dip below the minimum temp', () => {
+    for (let i = 0 ; i < 20 ; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.getTemperature()).toBe(10);
+  })
+
 });
